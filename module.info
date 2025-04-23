@@ -1,0 +1,6 @@
+Name: PerfdataGraphs Dummy Backend
+Version: 0.1.0
+Requires:
+  Modules: perfdatagraphs
+Description: Dummy Backend for Icinga Web Performance Data Graphs
+ This module can be used for testing and development.
