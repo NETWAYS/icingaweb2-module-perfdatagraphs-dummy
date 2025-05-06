@@ -36,6 +36,9 @@ class ConfigController extends CompatController
         $form = (new PerfdataGraphsDummyConfigForm())
             ->setIniConfig(Config::module('perfdatagraphsdummy'));
         $form->handleRequest();
+
+        $this->mergeTabs($this->Module()->getConfigTabs()->activate('general'));
+
         $this->addContent(new HtmlString($form->render()));
     }
 
@@ -44,10 +47,12 @@ class ConfigController extends CompatController
      *
      * @param Tabs $tabs
      */
-    protected function mergeTabs(Tabs $tabs): void
+    protected function mergeTabs(Tabs $tabs): self
     {
         foreach ($tabs->getTabs() as $tab) {
             $this->tabs->add($tab->getName(), $tab);
         }
+
+        return $this;
     }
 }
