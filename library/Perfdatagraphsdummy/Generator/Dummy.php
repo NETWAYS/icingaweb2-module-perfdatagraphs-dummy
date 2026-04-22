@@ -133,7 +133,7 @@ class Dummy
 
         $timestamps = $this->generateTimestamps();
 
-        $ds1 = new PerfdataSet('pl', 'percentage');
+        $ds1 = new PerfdataSet('pl', 'percent');
         $ds1->setTimestamps($timestamps);
 
         // $v = new PerfdataSeries('value', $this->generateData(10, 500));
